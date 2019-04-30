@@ -3,12 +3,15 @@ const convert = require('xml-js');
 
 /**
  Zillow API call happens here. Latitude and longitude are the GPS location of the neighbourhood, provided in the search field.
- ResultNums is an integer, size of the
+ ResultNums is an integer, size of the returned list.
+ ResultList is a list of Objects, included Area name, Area valuation and GPS location.
  **/
+
+const ZILLOW_KEY = 'YOUR API KEY HERE'
 
 const apiCall = (req, res) =>{
 
-    const endpoint = 'http://www.zillow.com/webservice/GetRegionChildren.htm?zws-id=X1-ZWz1gww0l2iozv_1651t';
+    const endpoint = 'http://www.zillow.com/webservice/GetRegionChildren.htm?zws-id=' + ZILLOW_KEY;
     const city = req.params.city;
     const url = endpoint + '&state=ny&city=' + city + '&childtype=neighborhood';
 
@@ -27,7 +30,6 @@ const apiCall = (req, res) =>{
 
             }
 
-            //console.log(propObj)     //Backend console listing all the New York neighbourhoods objects
             res.send(propObj)
         }
         else{
