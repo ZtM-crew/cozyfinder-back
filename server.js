@@ -6,7 +6,7 @@ const cors = require('cors');
 const apiCall = require('./routes/propertyCall');
 
 const app = express();
-const PORT = process.env.PORT;
+const L_PORT = 3000;
 
 
 app.use(logger(':date[iso]'));
@@ -23,6 +23,6 @@ app.get('/search/:city', (req, res) => {apiCall.apiCall(req, res)});
 
 
 
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`)
+app.listen(process.env.PORT || L_PORT, () => {
+    console.log(`Server is running on port ${L_PORT}`)
 });
