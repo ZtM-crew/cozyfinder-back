@@ -8,6 +8,7 @@ const ApiKey = require('../keys')
  ResultList is a list of Objects, included Area name, Area valuation and GPS location.
  **/
 
+
 const ZILLOW_KEY = ApiKey.zillowKey
 
 const apiCall = (req, res) =>{
