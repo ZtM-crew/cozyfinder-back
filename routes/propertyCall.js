@@ -7,7 +7,7 @@ const convert = require('xml-js');
  ResultList is a list of Objects, included Area name, Area valuation and GPS location.
  **/
 
-const ZILLOW_KEY = 'X1-ZWz1gww0l2iozv_1651t'
+const ZILLOW_KEY = 'YOUR KEY HERE'
 
 const apiCall = (req, res) =>{
 
