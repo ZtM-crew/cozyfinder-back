@@ -19,12 +19,10 @@ const apiCall = (req, res) =>{
         if(!err && resp.statusCode === 200) {
             let result = convert.xml2json(resp.body, {compact: true, spaces:4});
 
-
             const dat = JSON.parse(result)
             const propObj = {
                 latitude: dat['RegionChildren:regionchildren']['response']['region']['latitude']['_text'],
                 longitude: dat['RegionChildren:regionchildren']['response']['region']['longitude']['_text'],
-                resultNums: dat['RegionChildren:regionchildren']['response']['list']['count']['_text'],
                 resultList: dat['RegionChildren:regionchildren']['response']['list']['region']
 
 
