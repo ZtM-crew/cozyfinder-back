@@ -1,6 +1,5 @@
 const request = require('request');
 const convert = require('xml-js');
-const ApiKey = require('../.keys')
 
 /**
  Zillow API call happens here. Latitude and longitude are the GPS location of the neighbourhood, provided in the search field.
@@ -9,7 +8,7 @@ const ApiKey = require('../.keys')
  **/
 
 
-const ZILLOW_KEY = ApiKey.zillowKey
+const ZILLOW_KEY = process.env.ZillowKey
 
 const apiCall = (req, res) =>{
 
