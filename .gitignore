@@ -2,7 +2,7 @@
 /node_modules
 
 #Files
-keys.js
+.keys.js
 
 # IDE
 .idea/
